@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>線上測驗系統</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-graduation-cap"></i> 線上測驗系統</h1>
+        
+        <div id="start-section" class="section">
+            <div class="welcome-message">
+                <i class="fas fa-book-open fa-3x"></i>
+                <h2>歡迎參加測驗</h2>
+                <p>本測驗包含選擇題和填充題</p>
+                <button onclick="startTest()">
+                    <i class="fas fa-play"></i> 開始測驗
+                </button>
+            </div>
+        </div>
+
+        <div id="quiz-section" class="section" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress" id="progress-bar"></div>
+            </div>
+            <div id="question-container">
+                <div class="question-type" id="question-type"></div>
+                <h2 id="question-text"></h2>
+                <div id="answer-container"></div>
+            </div>
+            <button id="next-btn" onclick="nextQuestion()">
+                <i class="fas fa-arrow-right"></i> 下一題
+            </button>
+            <button id="submit-btn" onclick="submitQuiz()" style="display: none;">
+                <i class="fas fa-check"></i> 提交測驗
+            </button>
+        </div>
+
+        <div id="result-section" class="section" style="display: none;">
+            <i class="fas fa-trophy fa-3x"></i>
+            <h2>測驗完成！</h2>
+            <p>您的得分：</p>
+            <span id="score"></span>
+            <div id="answer-review"></div>
+            <button onclick="resetQuiz()">
+                <i class="fas fa-redo"></i> 重新測驗
+            </button>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
